@@ -1,0 +1,54 @@
+body {
+  background-image: url("../img/wall.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.barra {
+  background-color: rgba(10, 69, 82, 0.958);
+  color: wheat;
+  font-size: 20px;
+  height: 25px; width: 700px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#my_canvas{ 
+  background:#000000; 
+  border:#000 1px solid;
+  height: 520px;
+  width: 700px;
+}
+button{
+    font-size: 38px;
+    cursor: pointer;
+    border-radius: 8px;
+    border:2px solid wheat;
+}
+button:hover{
+    background-color: wheat;
+    color: #000000;
+}
+
+.boton-left, .boton-right{
+    color : white;
+    background-color: rgba(7, 33, 90, 0.958);
+}
+
+.boton-die{
+    color : white;
+    background-color: rgb(174, 20, 20)
+}
+
+.boton-start{
+    color : white;
+    background-color: #000000;
+}

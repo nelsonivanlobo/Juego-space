@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceship Game</title>
+<head>
+<link rel="stylesheet" href="style.css">
+<script>
+</script>
+</head>
+<body onload="load">
+  <div class="container">
+    <canvas id="my_canvas" width="700" height="600"></canvas>
+    <div>
+      <button class = "boton-left" id="left_btn">Move Left</button>
+      <button class = "boton-die" id="fire_btn">Fire Missile</button>
+      <button class = "boton-right" id="right_btn">Move Right</button>
+
+      <button id="start_button" class="boton-start" onclick="startGame()">Start</button>
+      <h3 class="barra"></h3>
+    </div>
+  </div>
+  <script src = "app.js" defer></script>
+</body>  
+</html>

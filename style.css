@@ -17,7 +17,7 @@ h1 {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .content-canvas {

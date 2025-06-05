@@ -104,7 +104,12 @@ function initCanvas(){
                 clearInterval(animateInterval);
                 ctx.fillStyle = 'yellow';
                 ctx.font = this.gameStatus.font;
-                ctx.fillText('You win!', cW * .5 - 80, 50);
+                ctx.fillText('Ganaste!', cW * .5 - 80, 50);
+
+            // Recargar la página después de 2 segundos (3000 milisegundos)
+                setTimeout(() => {
+                location.reload();
+                }, 3000);
             }
         }
         this.hitDetect = function (m, mi) {
@@ -120,45 +125,48 @@ function initCanvas(){
         
                     enemiesDestroyed++;
         
-                    document.querySelector('.barra').innerHTML = `Enemies destroyed: ${enemiesDestroyed}`;
+                    document.querySelector('.barra').innerHTML = `Enemigos destruidos: ${enemiesDestroyed}`;
                 }
             }
         };
 
-        this.hitDetectLowerLevel = function(enemy){
-            if(enemy.y > 550){
-                this.gameStatus.over = true;
-                this.gameStatus.message = 'Enemy(s) have passed!';
-    if (this.gameStatus.over === true) {
-        const startButton = document.getElementById("start_button");
-        startButton.disabled = false;
-    }
-            }
+this.hitDetectLowerLevel = function(enemy) {
+    if (enemy.y > 550) {
+        this.gameStatus.over = true;
+        this.gameStatus.message = 'El enemigo pasó!';
+        enemiesDestroyed = 0; // Reiniciar el contador de enemigos destruidos
+        document.querySelector('.barra').innerHTML = `Enemigos destruidos: ${enemiesDestroyed}`;
 
-            if(enemy.id === 'enemy3'){
-                console.log(this.x);
-            }
-
-            if ((enemy.y < this.y + 25 && enemy.y > this.y - 25) &&
-                (enemy.x < this.x + 45 && enemy.x > this.x - 45)) {
-                    this.gameStatus.over = true;
-                    this.gameStatus.message = 'You Died!'
-
-    // Verifica si el juego ha terminado correctamente
-    if (this.gameStatus.over === true) {
-        // Reactiva el botón cuando el juego termina
-        const startButton = document.getElementById("start_button");
-        startButton.disabled = false;
-    }
-                }
-
-            if(this.gameStatus.over === true){  
-                clearInterval(animateInterval);
-                ctx.fillStyle = this.gameStatus.fillStyle;
-                ctx.font = this.gameStatus.font;
-                ctx.fillText(this.gameStatus.message, cW * .5 - 80, 50); // texto x , y
-            }
+        if (this.gameStatus.over === true) {
+            const startButton = document.getElementById("start_button");
+            startButton.disabled = false;
         }
+    }
+
+    if (enemy.id === 'enemy3') {
+        console.log(this.x);
+    }
+
+    if ((enemy.y < this.y + 25 && enemy.y > this.y - 25) &&
+        (enemy.x < this.x + 45 && enemy.x > this.x - 45)) {
+        this.gameStatus.over = true;
+        this.gameStatus.message = 'Perdiste!';
+        enemiesDestroyed = 0; // Reiniciar el contador de enemigos destruidos
+        document.querySelector('.barra').innerHTML = `Enemigos destruidos: ${enemiesDestroyed}`;
+
+        if (this.gameStatus.over === true) {
+            const startButton = document.getElementById("start_button");
+            startButton.disabled = false;
+        }
+    }
+
+    if (this.gameStatus.over === true) {  
+        clearInterval(animateInterval);
+        ctx.fillStyle = this.gameStatus.fillStyle;
+        ctx.font = this.gameStatus.font;
+        ctx.fillText(this.gameStatus.message, cW * .5 - 80, 50); // texto x , y
+    }
+};
     }
 
     var launcher = new Launcher();

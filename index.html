@@ -11,16 +11,28 @@
 </head>
 <body onload="load">
   <div class="container">
-    <canvas id="my_canvas" width="700" height="600"></canvas>
-    <div>
-      <button class = "boton-left" id="left_btn">Move Left</button>
-      <button class = "boton-die" id="fire_btn">Fire Missile</button>
-      <button class = "boton-right" id="right_btn">Move Right</button>
-
-      <button id="start_button" class="boton-start" onclick="startGame()">Start</button>
-      <h3 class="barra"></h3>
+    <div class="content-text">
+     <h1>SPACESHIP ¡Ayúdanos a combatir la invasión!</h1> 
     </div>
+    
+    <div class="content-canvas">
+<canvas id="my_canvas" width="700" height="600"></canvas>
+    <div class="buton-content">
+      <button class = "boton-left" id="left_btn">Izquierda</button>
+      <button class = "boton-die" id="fire_btn">Fuego</button>
+      <button class = "boton-right" id="right_btn">Derecha</button>
+
+      <button id="start_button" class="boton-start" onclick="startGame()">Jugar</button>
+      
+    </div>
+    <h3 class="barra"></h3>
+    </div>
+    
   </div>
   <script src = "app.js" defer></script>
-</body>  
+</body>
+
+<footer>
+  <p class="footer__copy">&#169; 2025 {Lweb} Todos los derechos reservados.</p>
+</footer>
 </html>

@@ -32,7 +32,8 @@ h1 {
   background-color: rgba(10, 69, 82, 0.958);
   color: wheat;
   font-size: 1rem;
-  height: auto;
+  /* height: auto; */
+  height: 10px;
   width: 90%;
   max-width: 700px; /* Limitar ancho máximo en pantallas grandes */
   border-radius: 10px;
